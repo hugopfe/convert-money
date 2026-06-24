@@ -9,19 +9,11 @@ function convertValues() {
   const currencyValueConverted = document.querySelector(
     "#currency-value-converted", // Value converted paragraph
   )
-  const currencyConvertedFlag = document.querySelector(
-    "#currency-converted-flag",
-  )
-  const currencyConvertedName = document.querySelector(
-    ".currency-converted-name",
-  )
 
   const currencyInfos = {}
 
-  function setCurrencyInfos(currencyValue, currencyName, locale, currency) {
+  function setCurrencyInfos(currencyValue, locale, currency) {
     currencyInfos.valueToday = currencyValue
-    currencyInfos.name = currencyName
-    currencyInfos.imgPath = `./assets/${currencySelect.value}.png`
     currencyInfos.format = {
       lang: locale,
       options: {
@@ -33,23 +25,20 @@ function convertValues() {
 
   switch (currencySelect.value) {
     case "dollar":
-      setCurrencyInfos(4, "Dólar americano", "en-US", "USD")
+      setCurrencyInfos(4, "en-US", "USD")
       break
     case "euro":
-      setCurrencyInfos(5, "Euro", "de-DE", "EUR")
+      setCurrencyInfos(5, "de-DE", "EUR")
       break
     case "libra":
-      setCurrencyInfos(3, "Libra", "en-US", "GBP")
+      setCurrencyInfos(3, "en-US", "GBP")
       break
     case "bitcoin":
-      setCurrencyInfos(310863.161, "Bitcoin", "en-US", "XBT")
+      setCurrencyInfos(310863.161, "en-US", "XBT")
       break
   }
 
   const convertedValue = inputCurrencyValue / currencyInfos.valueToday
-
-  currencyConvertedFlag.src = currencyInfos.imgPath
-  currencyConvertedName.innerText = currencyInfos.name
 
   currencyValueToConvert.innerText = new Intl.NumberFormat("pt-BR", {
     style: "currency",
@@ -61,4 +50,36 @@ function convertValues() {
   ).format(convertedValue)
 }
 
+function changeCurrency() {
+  const currencyConvertedFlag = document.querySelector(
+    "#currency-converted-flag",
+  )
+  const currencyConvertedName = document.querySelector(
+    ".currency-converted-name",
+  )
+
+  function updateCurrency(name) {
+    currencyConvertedFlag.src = `./assets/${currencySelect.value}.png`
+    currencyConvertedName.innerText = name
+  }
+
+  switch (currencySelect.value) {
+    case "dollar":
+        updateCurrency("Dólar americano")
+      break
+    case "euro":
+        updateCurrency("Euro")
+      break
+    case "libra":
+        updateCurrency("Libra")
+      break
+    case "bitcoin":
+        updateCurrency("BitCoin")
+      break
+  }
+
+  convertValues()
+}
+
+currencySelect.addEventListener("change", changeCurrency)
 convertButton.addEventListener("click", convertValues)
