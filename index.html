@@ -20,11 +20,11 @@
             </label>
             <label for="converted">
                 Converter <b>para</b>
-                <select name="converted" id="converted">
-                    <option>US$ Dólar americano</option>
-                    <option>€ Euro</option>
-                    <option>£ Libra</option>
-                    <option>₿ Bitcoin</option>
+                <select name="converted" id="select-target-currecy">
+                    <option value="dollar">US$ Dólar americano</option>
+                    <option value="euro">€ Euro</option>
+                    <option value="libra">£ Libra</option>
+                    <option value="bitcoin">₿ Bitcoin</option>
                 </select>
             </label>
             <label for="value">
@@ -44,8 +44,8 @@
             <img src="assets/arrow.png" alt="arrow down" id="arrow">
 
             <div class="currency-wrapper">
-                <img src="assets/dolar.png" alt="logo moeda convertida">
-                <p>Dólar americano</p>
+                <img src="assets/dollar.png" alt="logo moeda convertida" id="currency-converted-flag">
+                <p class="currency-converted-name">Dólar americano</p>
                 <p class="currency-value" id="currency-value-converted">US$ 0.00</p>
             </div>
         </section>
