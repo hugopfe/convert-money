@@ -1,0 +1,118 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Tirra:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Tirra', sans-serif;
+}
+
+body {
+    background-color: #8b51fd;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    height: 100vh;
+}
+
+img#logo {
+    width: 200px;
+    margin-bottom: 20px;
+}
+
+main {
+    width: 300px;
+    background-color: #F4F4F4;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    color: #575757;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+label {
+    display: block;
+    font-size: 0.8em;
+    margin-bottom: 20px;
+}
+
+select {
+    width: 100%;
+    border: 1px solid #a0a0a0;
+    border-radius: 5px;
+    padding: 10px;
+    font-weight: 700;
+}
+
+option {
+    font-weight: 700;
+}
+
+input {
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px 1px 3px #00000047;
+    padding: 10px;
+    font-weight: 700;
+}
+
+button {
+    width: 100%;
+    cursor: pointer;
+    background-color: #772FD3;
+    color: white;
+    box-shadow: 0px 1px 3px #00000050;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 0;
+    font-weight: 700;
+}
+
+section#result {
+    margin-top: 30px;
+    padding: 10px;
+    border: 1px solid #772FD3;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+img#arrow {
+    margin: 10px 0;
+}
+
+p.value {
+    font-weight: 700;
+}
+
+@media screen and (min-width: 768px) {
+    body {
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        align-content: center;
+    }
+
+    img#logo {
+        margin-right: 50px;
+    }
+
+    main {
+        width: 40%;
+        height: 400px;
+        flex-flow: row;
+        align-items: center;
+    }
+
+    section#result {
+        margin: 0px 20px;
+        justify-content: center;
+        width: 50%;
+    }
+}
