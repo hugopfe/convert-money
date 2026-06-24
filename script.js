@@ -83,3 +83,7 @@ function changeCurrency() {
 
 currencySelect.addEventListener("change", changeCurrency)
 convertButton.addEventListener("click", convertValues)
+
+// TODO: Add more currencies to convert from
+// TODO: Change bitcoin code to icon on value converted
+// TODO: Let currency values actual from API
